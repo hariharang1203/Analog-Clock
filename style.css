@@ -1,0 +1,141 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3C3D37;
+    user-select: none;
+    cursor: pointer;
+
+}
+.clock{
+    height: 500px;
+    width:500px;
+    border-radius: 50%;
+    position: relative;
+    background-color:black;  
+    box-shadow: 0px 0px 10px white;
+}
+.name{
+    font-size: 40px;
+    color: #fff;
+    margin-top: -10%;
+    position: absolute;
+    z-index: 2;
+}
+.clock::before
+{ 
+    content: '';
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+    
+}
+.number{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    text-align: center;
+    color: #fff;
+  
+    font-size: 30px;
+    padding: 10px 0px 0px 0px;
+   --rotate: 0;
+    transform: rotate(var(--rotate));
+  
+}
+.number1{--rotate:30deg;}
+.number2{--rotate:60deg;}
+.number3{--rotate:90deg; color:red;}
+.number4{--rotate:120deg;}
+.number5{--rotate:150deg;}
+.number6{--rotate:180deg;color:red;}
+.number7{--rotate:210deg;}
+.number8{--rotate:240deg;}
+.number9{--rotate:270deg;color:red;}
+.number10{--rotate:300deg;}
+.number11{--rotate:330deg;}
+.number12{color: red;}
+
+.needle{
+    position:absolute;
+    bottom:50%;
+    left:50%;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: bottom;
+    --rotation:0;
+   
+}
+.hrs{
+    height: 37%;
+    width:10px;
+    background-color: #fff;
+    --rotation:0;
+}
+.min{
+    height: 40%;
+    width: 7px;
+    background-color: #fff;
+   
+    --rotation:0;
+   
+}
+.sec{
+    background-color: red;
+    height: 43%;
+    width:5px;
+    
+    --rotation:0;
+}
+
+@media (max-width:320px)
+{
+   
+    .clock{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin-left: 10%;
+    }
+    .number{
+        height: 100%;
+        width: 100%;
+    }
+    .name{
+        font-size: 24px;
+        top:45%;
+        left: 43%;
+    }
+}
+@media (max-width:475px)
+{
+   
+    .clock{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin-left: 10%;
+    }
+    .number{
+        height: 100%;
+        width: 100%;
+    }
+    .name{
+        font-size: 24px;
+        top:45%;
+        left: 43%;
+    }
+}
